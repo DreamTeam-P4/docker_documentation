@@ -4,7 +4,6 @@ Docker est une plateforme lancée en 2013 permettant aux développeurs et aux ad
 En d’autres termes, nous pouvons embarquer une application avec toutes ses dépendances dans un process isolé (conteneur) qui peut ensuite être exécutée dans n’importte quelle machine, n’importe quel système d’exploitation qui est compatible avec le moteur Docker.
 ## Qu'est ce la conteneurisation ?
 La conteneurisation permet de packager (regrouper) tous les scripts, API, librairies dont une application a besoin. L’objectif de la conteneurisation est d'exécuter l’application sur n’importe quel noyau compatible.
-
 Elle évite de se soucier d’interactions ou d’incompatibilités avec les conteneurs déjà présents ou à venir sur cette machine.
 
 Elle permet de ne pas occuper autant de ressources que réclamerait une machine virtuelle (ou virtual machine, VM), qui emporte son propre système d’exploitation et bloque des ressources à son lancement.
@@ -16,14 +15,16 @@ Les conteneurs ne reservent que les ressources nécessaires et démarrent plus r
 Moins couteux
 Augmente la densite de deploiement
 :warning:
-``Il faut savoir que VM et conteneur son liés.``
+
+```Il faut savoir que VM et conteneur son liés.```
 ##  CHAPITRE :one:: Prise en main de Docker
 ### lister les images disponibles sur votre ordinateur
-``docker images``
+
+```docker images```
 ### recuperer ou telecharger une image
-``docker pull nom_image``
+```docker pull nom_image```
 ### executer un conteneur
-``docker run -it nom_image``
+```docker run -it nom_image```
 ### executer un conteneur de maniere détachée 
 ``docker run -it -d nom_image``
 ### pour arreter le processus d'une image
@@ -44,6 +45,8 @@ La commande ``EXPOSE`` permet de preciser le port sur lequel notre image ecouter
 La commande ``VOLUME`` permet de definir les repertoires que nous souhaitons partager
 
 La commande ``CMD`` contient la commande que nus devons executer apres installation de l'image
+
+la commande ``COPY`` dockerfile qui copie les fichiers d'un emplacement source local vers une destination dans le conteneur Docker
 ## Le dossier dockerignore
 Ce fichier est comparable au fichier ``.gitignore``, elle contient les dossiers et fichiers qui seront ignorés 
 ## Lancer son propre conteneur
@@ -73,9 +76,12 @@ Une stack est un ensemble de conteneurs docker lances via un seul fichier docker
 ### valider une stack docker-compose 
 ``docker-compose config``
 ## Definir notre fichier docker-compose
-Un fichier docker compose doit toujours contenir:
-une ``version`` permet de savoir lea version minimale
+Le fichier Compose est un fichier YAML définissant les services, les réseaux et les volumes pour une application Docker. La version la plus récente et recommandée du format de fichier Compose est définie par la spécification Compose 
+
 ## Liens utiles :link:
+https://docs.docker.com/compose/compose-file/
+
+
 [Docker Hub](https://hub.docker.com/)
 Installation de docker desktop sur ubuntu :link:https://docs.docker.com/desktop/linux/
 webdevops /php-nginx
